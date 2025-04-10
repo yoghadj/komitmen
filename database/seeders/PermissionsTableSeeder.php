@@ -168,38 +168,42 @@ class PermissionsTableSeeder extends Seeder
             ],
             [
                 'id'    => 40,
-                'title' => 'reply_show',
+                'title' => 'reply_edit',
             ],
             [
                 'id'    => 41,
-                'title' => 'reply_delete',
+                'title' => 'reply_show',
             ],
             [
                 'id'    => 42,
-                'title' => 'reply_access',
+                'title' => 'reply_delete',
             ],
             [
                 'id'    => 43,
-                'title' => 'answer_create',
+                'title' => 'reply_access',
             ],
             [
                 'id'    => 44,
-                'title' => 'answer_edit',
+                'title' => 'answer_create',
             ],
             [
                 'id'    => 45,
-                'title' => 'answer_show',
+                'title' => 'answer_edit',
             ],
             [
                 'id'    => 46,
-                'title' => 'answer_delete',
+                'title' => 'answer_show',
             ],
             [
                 'id'    => 47,
-                'title' => 'answer_access',
+                'title' => 'answer_delete',
             ],
             [
                 'id'    => 48,
+                'title' => 'answer_access',
+            ],
+            [
+                'id'    => 49,
                 'title' => 'profile_password_edit',
             ],
         ];

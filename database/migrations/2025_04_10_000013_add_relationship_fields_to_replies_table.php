@@ -10,7 +10,7 @@ class AddRelationshipFieldsToRepliesTable extends Migration
     {
         Schema::table('replies', function (Blueprint $table) {
             $table->unsignedBigInteger('komitmen_id')->nullable();
-            $table->foreign('komitmen_id', 'komitmen_fk_10527882')->references('id')->on('komitmen');
+            $table->foreign('komitmen_id', 'komitmen_fk_10527964')->references('id')->on('komitmen');
         });
     }
 }

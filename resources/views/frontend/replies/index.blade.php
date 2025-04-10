@@ -55,6 +55,11 @@
                                                 </a>
                                             @endcan
 
+                                            @can('reply_edit')
+                                                <a class="btn btn-xs btn-info" href="{{ route('frontend.replies.edit', $reply->id) }}">
+                                                    {{ trans('global.edit') }}
+                                                </a>
+                                            @endcan
 
                                             @can('reply_delete')
                                                 <form action="{{ route('frontend.replies.destroy', $reply->id) }}" method="POST" onsubmit="return confirm('{{ trans('global.areYouSure') }}');" style="display: inline-block;">
