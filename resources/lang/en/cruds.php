@@ -131,14 +131,6 @@ return [
             'deleted_at_helper' => ' ',
         ],
     ],
-    'reply' => [
-        'title'          => 'Reply',
-        'title_singular' => 'Reply',
-    ],
-    'answer' => [
-        'title'          => 'Answer',
-        'title_singular' => 'Answer',
-    ],
     'questionnaire' => [
         'title'          => 'Questionnaire',
         'title_singular' => 'Questionnaire',
@@ -146,6 +138,44 @@ return [
     'monitoring' => [
         'title'          => 'Monitoring',
         'title_singular' => 'Monitoring',
+    ],
+    'reply' => [
+        'title'          => 'Reply',
+        'title_singular' => 'Reply',
+        'fields'         => [
+            'id'                => 'ID',
+            'id_helper'         => ' ',
+            'nik'               => 'Nik',
+            'nik_helper'        => ' ',
+            'komitmen'          => 'Komitmen',
+            'komitmen_helper'   => ' ',
+            'created_at'        => 'Created at',
+            'created_at_helper' => ' ',
+            'updated_at'        => 'Updated at',
+            'updated_at_helper' => ' ',
+            'deleted_at'        => 'Deleted at',
+            'deleted_at_helper' => ' ',
+        ],
+    ],
+    'answer' => [
+        'title'          => 'Answer',
+        'title_singular' => 'Answer',
+        'fields'         => [
+            'id'                => 'ID',
+            'id_helper'         => ' ',
+            'reply'             => 'Reply',
+            'reply_helper'      => ' ',
+            'question'          => 'Question',
+            'question_helper'   => ' ',
+            'answer'            => 'Answer',
+            'answer_helper'     => ' ',
+            'created_at'        => 'Created at',
+            'created_at_helper' => ' ',
+            'updated_at'        => 'Updated at',
+            'updated_at_helper' => ' ',
+            'deleted_at'        => 'Deleted at',
+            'deleted_at_helper' => ' ',
+        ],
     ],
 
 ];

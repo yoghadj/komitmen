@@ -29,17 +29,16 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
     Route::delete('options/destroy', 'OptionsController@massDestroy')->name('options.massDestroy');
     Route::resource('options', 'OptionsController');
 
+    // Monitoring
+    Route::delete('monitorings/destroy', 'MonitoringController@massDestroy')->name('monitorings.massDestroy');
+    Route::resource('monitorings', 'MonitoringController');
+
     // Reply
-    Route::delete('replies/destroy', 'ReplyController@massDestroy')->name('replies.massDestroy');
-    Route::resource('replies', 'ReplyController');
+    Route::resource('replies', 'ReplyController', ['except' => ['create', 'store', 'edit', 'update', 'show', 'destroy']]);
 
     // Answer
     Route::delete('answers/destroy', 'AnswerController@massDestroy')->name('answers.massDestroy');
     Route::resource('answers', 'AnswerController');
-
-    // Monitoring
-    Route::delete('monitorings/destroy', 'MonitoringController@massDestroy')->name('monitorings.massDestroy');
-    Route::resource('monitorings', 'MonitoringController');
 });
 Route::group(['prefix' => 'profile', 'as' => 'profile.', 'namespace' => 'Auth', 'middleware' => ['auth']], function () {
     // Change password
@@ -77,17 +76,16 @@ Route::group(['as' => 'frontend.', 'namespace' => 'Frontend', 'middleware' => ['
     Route::delete('options/destroy', 'OptionsController@massDestroy')->name('options.massDestroy');
     Route::resource('options', 'OptionsController');
 
+    // Monitoring
+    Route::delete('monitorings/destroy', 'MonitoringController@massDestroy')->name('monitorings.massDestroy');
+    Route::resource('monitorings', 'MonitoringController');
+
     // Reply
-    Route::delete('replies/destroy', 'ReplyController@massDestroy')->name('replies.massDestroy');
-    Route::resource('replies', 'ReplyController');
+    Route::resource('replies', 'ReplyController', ['except' => ['create', 'store', 'edit', 'update', 'show', 'destroy']]);
 
     // Answer
     Route::delete('answers/destroy', 'AnswerController@massDestroy')->name('answers.massDestroy');
     Route::resource('answers', 'AnswerController');
-
-    // Monitoring
-    Route::delete('monitorings/destroy', 'MonitoringController@massDestroy')->name('monitorings.massDestroy');
-    Route::resource('monitorings', 'MonitoringController');
 
     Route::get('frontend/profile', 'ProfileController@index')->name('profile.index');
     Route::post('frontend/profile', 'ProfileController@update')->name('profile.update');

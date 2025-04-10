@@ -77,6 +77,21 @@
 
                                     <a class="dropdown-item" href="{{ route('frontend.profile.index') }}">{{ __('My profile') }}</a>
 
+                                    @can('questionnaire_access')
+                                        <a class="dropdown-item disabled" href="#">
+                                            {{ trans('cruds.questionnaire.title') }}
+                                        </a>
+                                    @endcan
+                                    @can('reply_access')
+                                        <a class="dropdown-item ml-3" href="{{ route('frontend.replies.index') }}">
+                                            {{ trans('cruds.reply.title') }}
+                                        </a>
+                                    @endcan
+                                    @can('answer_access')
+                                        <a class="dropdown-item ml-3" href="{{ route('frontend.answers.index') }}">
+                                            {{ trans('cruds.answer.title') }}
+                                        </a>
+                                    @endcan
                                     @can('reference_access')
                                         <a class="dropdown-item disabled" href="#">
                                             {{ trans('cruds.reference.title') }}
