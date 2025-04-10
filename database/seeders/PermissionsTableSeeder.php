@@ -140,70 +140,54 @@ class PermissionsTableSeeder extends Seeder
             ],
             [
                 'id'    => 33,
-                'title' => 'reply_create',
-            ],
-            [
-                'id'    => 34,
-                'title' => 'reply_edit',
-            ],
-            [
-                'id'    => 35,
-                'title' => 'reply_show',
-            ],
-            [
-                'id'    => 36,
-                'title' => 'reply_delete',
-            ],
-            [
-                'id'    => 37,
-                'title' => 'reply_access',
-            ],
-            [
-                'id'    => 38,
-                'title' => 'answer_create',
-            ],
-            [
-                'id'    => 39,
-                'title' => 'answer_edit',
-            ],
-            [
-                'id'    => 40,
-                'title' => 'answer_show',
-            ],
-            [
-                'id'    => 41,
-                'title' => 'answer_delete',
-            ],
-            [
-                'id'    => 42,
-                'title' => 'answer_access',
-            ],
-            [
-                'id'    => 43,
                 'title' => 'questionnaire_access',
             ],
             [
-                'id'    => 44,
+                'id'    => 34,
                 'title' => 'monitoring_create',
             ],
             [
-                'id'    => 45,
+                'id'    => 35,
                 'title' => 'monitoring_edit',
             ],
             [
-                'id'    => 46,
+                'id'    => 36,
                 'title' => 'monitoring_show',
             ],
             [
-                'id'    => 47,
+                'id'    => 37,
                 'title' => 'monitoring_delete',
             ],
             [
-                'id'    => 48,
+                'id'    => 38,
                 'title' => 'monitoring_access',
             ],
             [
-                'id'    => 49,
+                'id'    => 39,
+                'title' => 'reply_access',
+            ],
+            [
+                'id'    => 40,
+                'title' => 'answer_create',
+            ],
+            [
+                'id'    => 41,
+                'title' => 'answer_edit',
+            ],
+            [
+                'id'    => 42,
+                'title' => 'answer_show',
+            ],
+            [
+                'id'    => 43,
+                'title' => 'answer_delete',
+            ],
+            [
+                'id'    => 44,
+                'title' => 'answer_access',
+            ],
+            [
+                'id'    => 45,
                 'title' => 'profile_password_edit',
             ],
         ];

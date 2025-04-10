@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
 use App\Models\Reply;
@@ -16,6 +16,6 @@ class ReplyController extends Controller
 
         $replies = Reply::with(['komitmen'])->get();
 
-        return view('admin.replies.index', compact('replies'));
+        return view('frontend.replies.index', compact('replies'));
     }
 }

@@ -20,9 +20,48 @@
                         </p>
                     </a>
                 </li>
+                @can('questionnaire_access')
+                    <li class="nav-item has-treeview {{ request()->is("admin/replies*") ? "menu-open" : "" }} {{ request()->is("admin/answers*") ? "menu-open" : "" }}">
+                        <a class="nav-link nav-dropdown-toggle {{ request()->is("admin/replies*") ? "active" : "" }} {{ request()->is("admin/answers*") ? "active" : "" }}" href="#">
+                            <i class="fa-fw nav-icon fas fa-clipboard-check">
+
+                            </i>
+                            <p>
+                                {{ trans('cruds.questionnaire.title') }}
+                                <i class="right fa fa-fw fa-angle-left nav-icon"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            @can('reply_access')
+                                <li class="nav-item">
+                                    <a href="{{ route("admin.replies.index") }}" class="nav-link {{ request()->is("admin/replies") || request()->is("admin/replies/*") ? "active" : "" }}">
+                                        <i class="fa-fw nav-icon fas fa-reply">
+
+                                        </i>
+                                        <p>
+                                            {{ trans('cruds.reply.title') }}
+                                        </p>
+                                    </a>
+                                </li>
+                            @endcan
+                            @can('answer_access')
+                                <li class="nav-item">
+                                    <a href="{{ route("admin.answers.index") }}" class="nav-link {{ request()->is("admin/answers") || request()->is("admin/answers/*") ? "active" : "" }}">
+                                        <i class="fa-fw nav-icon fas fa-check-double">
+
+                                        </i>
+                                        <p>
+                                            {{ trans('cruds.answer.title') }}
+                                        </p>
+                                    </a>
+                                </li>
+                            @endcan
+                        </ul>
+                    </li>
+                @endcan
                 @can('reference_access')
-                    <li class="nav-item has-treeview {{ request()->is("admin/komitmen*") ? "menu-open" : "" }} {{ request()->is("admin/questions*") ? "menu-open" : "" }} {{ request()->is("admin/options*") ? "menu-open" : "" }} {{ request()->is("admin/replies*") ? "menu-open" : "" }} {{ request()->is("admin/answers*") ? "menu-open" : "" }} {{ request()->is("admin/monitorings*") ? "menu-open" : "" }}">
-                        <a class="nav-link nav-dropdown-toggle {{ request()->is("admin/komitmen*") ? "active" : "" }} {{ request()->is("admin/questions*") ? "active" : "" }} {{ request()->is("admin/options*") ? "active" : "" }} {{ request()->is("admin/replies*") ? "active" : "" }} {{ request()->is("admin/answers*") ? "active" : "" }} {{ request()->is("admin/monitorings*") ? "active" : "" }}" href="#">
+                    <li class="nav-item has-treeview {{ request()->is("admin/komitmen*") ? "menu-open" : "" }} {{ request()->is("admin/questions*") ? "menu-open" : "" }} {{ request()->is("admin/options*") ? "menu-open" : "" }} {{ request()->is("admin/monitorings*") ? "menu-open" : "" }}">
+                        <a class="nav-link nav-dropdown-toggle {{ request()->is("admin/komitmen*") ? "active" : "" }} {{ request()->is("admin/questions*") ? "active" : "" }} {{ request()->is("admin/options*") ? "active" : "" }} {{ request()->is("admin/monitorings*") ? "active" : "" }}" href="#">
                             <i class="fa-fw nav-icon fas fa-cogs">
 
                             </i>
@@ -64,30 +103,6 @@
                                         </i>
                                         <p>
                                             {{ trans('cruds.option.title') }}
-                                        </p>
-                                    </a>
-                                </li>
-                            @endcan
-                            @can('reply_access')
-                                <li class="nav-item">
-                                    <a href="{{ route("admin.replies.index") }}" class="nav-link {{ request()->is("admin/replies") || request()->is("admin/replies/*") ? "active" : "" }}">
-                                        <i class="fa-fw nav-icon fas fa-redo">
-
-                                        </i>
-                                        <p>
-                                            {{ trans('cruds.reply.title') }}
-                                        </p>
-                                    </a>
-                                </li>
-                            @endcan
-                            @can('answer_access')
-                                <li class="nav-item">
-                                    <a href="{{ route("admin.answers.index") }}" class="nav-link {{ request()->is("admin/answers") || request()->is("admin/answers/*") ? "active" : "" }}">
-                                        <i class="fa-fw nav-icon far fa-check-circle">
-
-                                        </i>
-                                        <p>
-                                            {{ trans('cruds.answer.title') }}
                                         </p>
                                     </a>
                                 </li>

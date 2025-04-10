@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\MassDestroyAnswerRequest;
@@ -21,7 +21,7 @@ class AnswerController extends Controller
 
         $answers = Answer::with(['reply', 'question'])->get();
 
-        return view('admin.answers.index', compact('answers'));
+        return view('frontend.answers.index', compact('answers'));
     }
 
     public function create()
@@ -32,14 +32,14 @@ class AnswerController extends Controller
 
         $questions = Question::pluck('question', 'id')->prepend(trans('global.pleaseSelect'), '');
 
-        return view('admin.answers.create', compact('questions', 'replies'));
+        return view('frontend.answers.create', compact('questions', 'replies'));
     }
 
     public function store(StoreAnswerRequest $request)
     {
         $answer = Answer::create($request->all());
 
-        return redirect()->route('admin.answers.index');
+        return redirect()->route('frontend.answers.index');
     }
 
     public function edit(Answer $answer)
@@ -52,14 +52,14 @@ class AnswerController extends Controller
 
         $answer->load('reply', 'question');
 
-        return view('admin.answers.edit', compact('answer', 'questions', 'replies'));
+        return view('frontend.answers.edit', compact('answer', 'questions', 'replies'));
     }
 
     public function update(UpdateAnswerRequest $request, Answer $answer)
     {
         $answer->update($request->all());
 
-        return redirect()->route('admin.answers.index');
+        return redirect()->route('frontend.answers.index');
     }
 
     public function show(Answer $answer)
@@ -68,7 +68,7 @@ class AnswerController extends Controller
 
         $answer->load('reply', 'question');
 
-        return view('admin.answers.show', compact('answer'));
+        return view('frontend.answers.show', compact('answer'));
     }
 
     public function destroy(Answer $answer)
