@@ -34,7 +34,8 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
     Route::resource('monitorings', 'MonitoringController');
 
     // Reply
-    Route::resource('replies', 'ReplyController', ['except' => ['create', 'store', 'edit', 'update', 'show', 'destroy']]);
+    Route::delete('replies/destroy', 'ReplyController@massDestroy')->name('replies.massDestroy');
+    Route::resource('replies', 'ReplyController', ['except' => ['edit', 'update']]);
 
     // Answer
     Route::delete('answers/destroy', 'AnswerController@massDestroy')->name('answers.massDestroy');
@@ -81,7 +82,8 @@ Route::group(['as' => 'frontend.', 'namespace' => 'Frontend', 'middleware' => ['
     Route::resource('monitorings', 'MonitoringController');
 
     // Reply
-    Route::resource('replies', 'ReplyController', ['except' => ['create', 'store', 'edit', 'update', 'show', 'destroy']]);
+    Route::delete('replies/destroy', 'ReplyController@massDestroy')->name('replies.massDestroy');
+    Route::resource('replies', 'ReplyController', ['except' => ['edit', 'update']]);
 
     // Answer
     Route::delete('answers/destroy', 'AnswerController@massDestroy')->name('answers.massDestroy');
