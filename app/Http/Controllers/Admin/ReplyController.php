@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\MassDestroyReplyRequest;
 use App\Http\Requests\StoreReplyRequest;
+use App\Http\Requests\UpdateReplyRequest;
 use App\Models\Komitman;
 use App\Models\Reply;
 use Gate;
@@ -34,6 +35,24 @@ class ReplyController extends Controller
     public function store(StoreReplyRequest $request)
     {
         $reply = Reply::create($request->all());
+
+        return redirect()->route('admin.replies.index');
+    }
+
+    public function edit(Reply $reply)
+    {
+        abort_if(Gate::denies('reply_edit'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+
+        $komitmens = Komitman::pluck('name', 'id')->prepend(trans('global.pleaseSelect'), '');
+
+        $reply->load('komitmen');
+
+        return view('admin.replies.edit', compact('komitmens', 'reply'));
+    }
+
+    public function update(UpdateReplyRequest $request, Reply $reply)
+    {
+        $reply->update($request->all());
 
         return redirect()->route('admin.replies.index');
     }
